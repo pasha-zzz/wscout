@@ -2,7 +2,7 @@
 
 mkdir /opt/warpscout
 cd /opt/warpscout
-downurl = $( curl -sS 'https://api.github.com/repos/vernette/warpscout/releases/latest' | grep -iF '"browser_down
+downurl=$( curl -sS 'https://api.github.com/repos/vernette/warpscout/releases/latest' | grep -iF '"browser_down
 load_url"' | grep -iF '_linux_arm64.'|sed 's/"[^"]*$//;s/^.*"//' )
 curl -kL "$downurl" | tar -xz
 echo '/opt/warpscout register -fresh -gen-junk' >/opt/warpscout/warpscout.sh
